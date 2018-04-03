@@ -6,8 +6,8 @@
   "typings": "src/index.d.ts",
   "builders": "builders.json",
   "dependencies": {
-    "@angular-devkit/architect": "github:angular/angular-devkit-architect-builds#fb26388",
-    "@angular-devkit/core": "github:angular/angular-devkit-core-builds#fb26388",
+    "@angular-devkit/architect": "github:angular/angular-devkit-architect-builds#9ed1471",
+    "@angular-devkit/core": "github:angular/angular-devkit-core-builds#9ed1471",
     "resolve": "^1.5.0",
     "rxjs": "^6.0.0-beta.3"
   },
