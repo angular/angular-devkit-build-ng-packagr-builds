@@ -9,6 +9,7 @@ import { BuildEvent, Builder, BuilderConfiguration, BuilderContext } from '@angu
 import { Observable } from 'rxjs';
 export interface NgPackagrBuilderOptions {
     project: string;
+    tsConfig?: string;
 }
 export declare class NgPackagrBuilder implements Builder<NgPackagrBuilderOptions> {
     context: BuilderContext;
