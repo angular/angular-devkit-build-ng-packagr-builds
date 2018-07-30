@@ -10,6 +10,7 @@ import { Observable } from 'rxjs';
 export interface NgPackagrBuilderOptions {
     project: string;
     tsConfig?: string;
+    watch?: boolean;
 }
 export declare class NgPackagrBuilder implements Builder<NgPackagrBuilderOptions> {
     context: BuilderContext;
