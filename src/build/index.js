@@ -8,40 +8,12 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 const core_1 = require("@angular-devkit/core");
-const fs = require("fs");
 const rxjs_1 = require("rxjs");
 const operators_1 = require("rxjs/operators");
-const semver = require("semver");
-const NEW_NG_PACKAGR_VERSION = '4.0.0-rc.3';
 // TODO move this function to architect or somewhere else where it can be imported from.
 // Blatantly copy-pasted from 'require-project-module.ts'.
 function requireProjectModule(root, moduleName) {
     return require(require.resolve(moduleName, { paths: [root] }));
-}
-function resolveProjectModule(root, moduleName) {
-    return require.resolve(moduleName, { paths: [root] });
-}
-function checkNgPackagrVersion(projectRoot) {
-    let ngPackagrJsonPath;
-    try {
-        ngPackagrJsonPath = resolveProjectModule(projectRoot, 'ng-packagr/package.json');
-    }
-    catch (_a) {
-        // ng-packagr is not installed
-        throw new Error(core_1.tags.stripIndent `
-    ng-packagr is not installed. Run \`npm install ng-packagr --save-dev\` and try again.
-  `);
-    }
-    const ngPackagrPackageJson = fs.readFileSync(ngPackagrJsonPath).toString();
-    const ngPackagrVersion = JSON.parse(ngPackagrPackageJson)['version'];
-    if (!semver.gte(ngPackagrVersion, NEW_NG_PACKAGR_VERSION)) {
-        throw new Error(core_1.tags.stripIndent `
-    The installed version of ng-packagr is ${ngPackagrVersion}. The watch feature
-    requires ng-packagr version to satisfy ${NEW_NG_PACKAGR_VERSION}.
-    Please upgrade your ng-packagr version.
-  `);
-    }
-    return true;
 }
 class NgPackagrBuilder {
     constructor(context) {
@@ -63,7 +35,6 @@ class NgPackagrBuilder {
                 ngPkgProject.withTsConfig(tsConfigPath);
             }
             if (options.watch) {
-                checkNgPackagrVersion(core_1.getSystemPath(root));
                 const ngPkgSubscription = ngPkgProject
                     .watch()
                     .pipe(operators_1.tap(() => obs.next({ success: true })), operators_1.catchError(e => {
