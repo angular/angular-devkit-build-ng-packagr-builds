@@ -5,16 +5,10 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import { BuildEvent, Builder, BuilderConfiguration, BuilderContext } from '@angular-devkit/architect';
+import { BuilderContext, BuilderOutput } from '@angular-devkit/architect/src/index2';
 import { Observable } from 'rxjs';
-export interface NgPackagrBuilderOptions {
-    project: string;
-    tsConfig?: string;
-    watch?: boolean;
-}
-export declare class NgPackagrBuilder implements Builder<NgPackagrBuilderOptions> {
-    context: BuilderContext;
-    constructor(context: BuilderContext);
-    run(builderConfig: BuilderConfiguration<NgPackagrBuilderOptions>): Observable<BuildEvent>;
-}
-export default NgPackagrBuilder;
+import { Schema as NgPackagrBuilderOptions } from './schema';
+export declare function execute(options: NgPackagrBuilderOptions, context: BuilderContext): Observable<BuilderOutput>;
+export { NgPackagrBuilderOptions };
+declare const _default: import("@angular-devkit/architect/src/internal").Builder<Record<string, string> & NgPackagrBuilderOptions>;
+export default _default;
