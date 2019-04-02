@@ -7,7 +7,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-const index2_1 = require("@angular-devkit/architect/src/index2");
+const architect_1 = require("@angular-devkit/architect");
 const path_1 = require("path");
 const rxjs_1 = require("rxjs");
 const operators_1 = require("rxjs/operators");
@@ -26,4 +26,4 @@ function execute(options, context) {
     }));
 }
 exports.execute = execute;
-exports.default = index2_1.createBuilder(execute);
+exports.default = architect_1.createBuilder(execute);
