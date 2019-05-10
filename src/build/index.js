@@ -20,10 +20,7 @@ async function initialize(options, root) {
     return packager;
 }
 function execute(options, context) {
-    return rxjs_1.from(initialize(options, context.workspaceRoot)).pipe(operators_1.switchMap(packager => options.watch ? packager.watch() : packager.build()), operators_1.mapTo({ success: true }), operators_1.catchError(error => {
-        context.reportStatus('Error: ' + error);
-        return [{ success: false }];
-    }));
+    return rxjs_1.from(initialize(options, context.workspaceRoot)).pipe(operators_1.switchMap(packager => options.watch ? packager.watch() : packager.build()), operators_1.mapTo({ success: true }));
 }
 exports.execute = execute;
 exports.default = architect_1.createBuilder(execute);
