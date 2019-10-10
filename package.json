@@ -1,13 +1,13 @@
 {
   "name": "@angular-devkit/build-ng-packagr",
-  "version": "0.900.0-next.8+20.3183963",
+  "version": "0.900.0-next.8+22.4749052",
   "description": "Angular Build Architect for ng-packagr",
   "experimental": true,
   "main": "src/index.js",
   "typings": "src/index.d.ts",
   "builders": "builders.json",
   "dependencies": {
-    "@angular-devkit/architect": "github:angular/angular-devkit-architect-builds#318396345",
+    "@angular-devkit/architect": "github:angular/angular-devkit-architect-builds#47490527f",
     "rxjs": "6.5.3"
   },
   "peerDependencies": {
@@ -25,7 +25,7 @@
     "url": "https://github.com/angular/angular-cli.git"
   },
   "engines": {
-    "node": ">= 10.9.0",
+    "node": ">= 10.13.0",
     "npm": ">= 6.11.0",
     "pnpm": ">= 3.2.0",
     "yarn": ">= 1.13.0"
