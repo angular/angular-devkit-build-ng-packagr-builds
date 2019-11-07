@@ -1,5 +1,5 @@
 /**
- * ng-packagr target options for Build Architect.
+ * ng-packagr target options for Build Architect. Use to build library projects.
  */
 export interface Schema {
     /**
@@ -7,7 +7,7 @@ export interface Schema {
      */
     project: string;
     /**
-     * The file path of the TypeScript configuration file.
+     * The full path for the TypeScript configuration file, relative to the current workspace.
      */
     tsConfig?: string;
     /**
