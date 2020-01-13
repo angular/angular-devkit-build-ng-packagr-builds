@@ -1,13 +1,13 @@
 {
   "name": "@angular-devkit/build-ng-packagr",
-  "version": "0.900.0-next.19+329.ce523a0",
+  "version": "0.900.0-next.19+327.b7c3804",
   "description": "Angular Build Architect for ng-packagr",
   "experimental": true,
   "main": "src/index.js",
   "typings": "src/index.d.ts",
   "builders": "builders.json",
   "dependencies": {
-    "@angular-devkit/architect": "github:angular/angular-devkit-architect-builds#ce523a067",
+    "@angular-devkit/architect": "github:angular/angular-devkit-architect-builds#b7c38040d",
     "rxjs": "6.5.4"
   },
   "peerDependencies": {
