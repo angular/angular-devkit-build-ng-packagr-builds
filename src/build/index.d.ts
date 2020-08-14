@@ -7,8 +7,10 @@
  */
 import { BuilderContext, BuilderOutput } from '@angular-devkit/architect';
 import { Observable } from 'rxjs';
-import { Schema as NgPackagrBuilderOptions } from './schema';
+import { Schema } from './schema';
+/** @deprecated Since 10.1 use `NgPackagrBuilderOptions` from `@angular-devkit/build-angular` instead. */
+export declare type NgPackagrBuilderOptions = Schema;
+/** @deprecated Since 10.1 use `executeNgPackagrBuilder` from `@angular-devkit/build-angular` instead. */
 export declare function execute(options: NgPackagrBuilderOptions, context: BuilderContext): Observable<BuilderOutput>;
-export { NgPackagrBuilderOptions };
-declare const _default: import("@angular-devkit/architect/src/internal").Builder<Record<string, string> & NgPackagrBuilderOptions>;
+declare const _default: import("@angular-devkit/architect/src/internal").Builder<Record<string, string> & Schema>;
 export default _default;

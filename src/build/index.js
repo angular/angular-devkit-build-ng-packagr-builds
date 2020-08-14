@@ -20,6 +20,7 @@ async function initialize(options, root) {
     }
     return packager;
 }
+/** @deprecated Since 10.1 use `executeNgPackagrBuilder` from `@angular-devkit/build-angular` instead. */
 function execute(options, context) {
     return rxjs_1.from(initialize(options, context.workspaceRoot)).pipe(operators_1.switchMap(packager => options.watch ? packager.watch() : packager.build()), operators_1.mapTo({ success: true }));
 }
