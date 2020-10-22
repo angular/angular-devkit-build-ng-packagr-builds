@@ -1,14 +1,14 @@
 {
   "name": "@angular-devkit/build-ng-packagr",
-  "version": "0.1100.0-next.5",
+  "version": "0.1002.0+2.a5bbcd5",
   "description": "Angular Build Architect for ng-packagr",
   "experimental": true,
   "main": "src/index.js",
   "typings": "src/index.d.ts",
   "builders": "builders.json",
   "dependencies": {
-    "@angular-devkit/architect": "github:angular/angular-devkit-architect-builds#bad0ced88",
-    "rxjs": "6.6.3"
+    "@angular-devkit/architect": "github:angular/angular-devkit-architect-builds#a5bbcd56b",
+    "rxjs": "6.6.2"
   },
   "peerDependencies": {
     "ng-packagr": "^10.0.0",
@@ -43,8 +43,7 @@
   "homepage": "https://github.com/angular/angular-cli",
   "husky": {
     "hooks": {
-      "commit-msg": "yarn -s ng-dev commit-message pre-commit-validate --file-env-variable HUSKY_GIT_PARAMS",
-      "prepare-commit-msg": "yarn -s ng-dev commit-message restore-commit-message-draft --file-env-variable HUSKY_GIT_PARAMS"
+      "pre-push": "node ./bin/devkit-admin hooks/pre-push"
     }
   }
 }
